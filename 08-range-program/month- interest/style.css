@@ -1,0 +1,79 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+
+.container{
+padding: 200px;
+align-items: center;    
+}
+
+body{
+    
+    background-image: url(Black-3D-Backgrounds-HD-Free-Download.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+
+}
+label{
+    font-size: 22px;
+    font-weight: 500;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+input{
+
+    width: 220px;
+    height: 33px;
+    border: none;
+text-align: center;
+border-radius: 6px;
+
+}
+
+/* button{
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+
+} */
+
+form{
+
+   color: white;
+    width: 550px;
+    height: 350px;
+    margin: auto;
+    text-align: center;
+   box-shadow: rgba(0, 0, 0, 0.981) 0px 2px 4px, rgb(0, 0, 0) 0px 7px 13px -3px, rgba(8, 8, 8, 0.975) 0px -3px 0px inset;
+
+}
+
+
+         .btn-grad {background-image: linear-gradient(to right, #525252 0%, #3d72b4  51%, #525252  100%)}
+         .btn-grad {
+            margin: 10px;
+            padding: 15px 45px;
+            text-align: center;
+            text-transform: uppercase;
+            transition: 0.5s;
+            background-size: 200% auto;
+            color: white;            
+            box-shadow: 0 0 20px #eee;
+            border-radius: 10px;
+            display: block;
+            margin: auto;
+          }
+
+          .btn-grad:hover {
+            background-position: right center; /* change the direction of the change here */
+            color: #fff;
+            text-decoration: none;
+          }
+         

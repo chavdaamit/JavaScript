@@ -1,0 +1,84 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body{
+   background-image: url(gradient-1770703146440.svg);
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-blend-mode: color;
+}
+
+label{
+    color: white;
+    font-size: 25px;
+    font-weight: 600;
+    font-family: Arial, Helvetica, ;
+    
+
+}
+
+.container{
+
+padding: 200px;
+width: 100%;
+
+margin: auto;
+display: flex;
+justify-content: center;
+text-align: center;
+
+}
+.adss{
+    margin-top: 150px;
+}
+
+form{
+
+    text-align: center;
+    width: 500px;
+    height: 400px;
+    box-shadow: rgb(10, 0, 0) 5px 19px 38px, rgba(10, 40, 30, 10.897) 0px 15px 12px;
+}
+
+select{
+
+    width: 100px;
+    height: 40px;
+    text-align: center;
+    border: none;
+    border-radius: 7px;
+}
+
+h3{
+    color: white;
+}
+
+
+        
+         .btn-grad {background-image: linear-gradient(to right, #004FF9 0%, #FFF94C  51%, #004FF9  100%)}
+         .btn-grad {
+            margin: 10px;
+            padding: 15px 45px;
+            text-align: center;
+            text-transform: uppercase;
+            transition: 0.5s;
+            background-size: 200% auto;
+            color: white;            
+            box-shadow: 0 0 20px #eee;
+            border-radius: 10px;
+            display: block;
+            margin: auto;
+          }
+
+          .btn-grad:hover {
+            background-position: right center; /* change the direction of the change here */
+            color: #fff;
+            text-decoration: none;
+          }
+         

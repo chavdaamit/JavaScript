@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400" preserveAspectRatio="none">
+            <!-- https://grabient.com/EwOgzAjALANCAMB2WCBsAOGpiIneArAfrnBPLBOMjFfMGHFIvExJiEakA?style=linearSwatches&angle=0 -->
+            <defs>
+              <clipPath id="bounds">
+                <rect x="0" y="0" width="800" height="400" />
+              </clipPath>
+            </defs>
+            <g clip-path="url(#bounds)"><path d="M 847.214,400.000 L -47.214,400.000 L -47.214,342.857 L 847.214,342.857 Z" fill="#150700" fill-opacity="1.000" /><path d="M 847.214,342.857 L -47.214,342.857 L -47.214,285.714 L 847.214,285.714 Z" fill="#0d0a0f" fill-opacity="1.000" /><path d="M 847.214,285.714 L -47.214,285.714 L -47.214,228.571 L 847.214,228.571 Z" fill="#0b1d20" fill-opacity="1.000" /><path d="M 847.214,228.571 L -47.214,228.571 L -47.214,171.429 L 847.214,171.429 Z" fill="#101e22" fill-opacity="1.000" /><path d="M 847.214,171.429 L -47.214,171.429 L -47.214,114.286 L 847.214,114.286 Z" fill="#1d0c13" fill-opacity="1.000" /><path d="M 847.214,114.286 L -47.214,114.286 L -47.214,57.143 L 847.214,57.143 Z" fill="#2f0602" fill-opacity="1.000" /><path d="M 847.214,57.143 L -47.214,57.143 L -47.214,-0.000 L 847.214,0.000 Z" fill="#481701" fill-opacity="1.000" /></g>
+          </svg>

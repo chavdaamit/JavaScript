@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400" preserveAspectRatio="none">
+            <!-- https://grabient.com/HQFgnAjANMFgbDEB2MMDMFHAKw+wEw4hQGwAM0oBaZ55aw88VyEBM5y8QA?style=angularSwatches&angle=45 -->
+            <defs>
+              <clipPath id="squareClip">
+                <rect x="0" y="0" width="800" height="400" />
+              </clipPath>
+              <filter id="antiGap">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="0.3" />
+              </filter>
+            </defs>
+            <g clip-path="url(#squareClip)" filter="url(#antiGap)" shape-rendering="crispEdges">
+          <path d="
+              M 400.000,200.000
+              L 716.228,-116.228
+              A 447.214,447.214 0 0 1 831.976,84.252
+              Z
+            " fill="#5210b4" fill-opacity="1.000" /><path d="
+              M 400.000,200.000
+              L 831.976,84.252
+              A 447.214,447.214 0 0 1 831.976,315.748
+              Z
+            " fill="#ad3377" fill-opacity="1.000" /><path d="
+              M 400.000,200.000
+              L 831.976,315.748
+              A 447.214,447.214 0 0 1 716.228,516.228
+              Z
+            " fill="#cb553e" fill-opacity="1.000" /><path d="
+              M 400.000,200.000
+              L 716.228,516.228
+              A 447.214,447.214 0 0 1 515.748,631.976
+              Z
+            " fill="#85764c" fill-opacity="1.000" /><path d="
+              M 400.000,200.000
+              L 515.748,631.976
+              A 447.214,447.214 0 0 1 284.252,631.976
+              Z
+            " fill="#359291" fill-opacity="1.000" /><path d="
+              M 400.000,200.000
+              L 284.252,631.976
+              A 447.214,447.214 0 0 1 83.772,516.228
+              Z
+            " fill="#41a8bb" fill-opacity="1.000" /><path d="
+              M 400.000,200.000
+              L 83.772,516.228
+              A 447.214,447.214 0 0 1 -31.976,315.748
+              Z
+            " fill="#99b899" fill-opacity="1.000" /><path d="
+              M 400.000,200.000
+              L -31.976,315.748
+              A 447.214,447.214 0 0 1 -31.976,84.252
+              Z
+            " fill="#cebf53" fill-opacity="1.000" /><path d="
+              M 400.000,200.000
+              L -31.976,84.252
+              A 447.214,447.214 0 0 1 83.772,-116.228
+              Z
+            " fill="#9bbe3b" fill-opacity="1.000" /><path d="
+              M 400.000,200.000
+              L 83.772,-116.228
+              A 447.214,447.214 0 0 1 284.252,-231.976
+              Z
+            " fill="#42b56e" fill-opacity="1.000" /><path d="
+              M 400.000,200.000
+              L 284.252,-231.976
+              A 447.214,447.214 0 0 1 515.748,-231.976
+              Z
+            " fill="#35a4af" fill-opacity="1.000" /><path d="
+              M 400.000,200.000
+              L 515.748,-231.976
+              A 447.214,447.214 0 0 1 716.228,-116.228
+              Z
+            " fill="#838cb2" fill-opacity="1.000" /></g>
+        </svg>

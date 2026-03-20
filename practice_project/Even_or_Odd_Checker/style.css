@@ -1,0 +1,84 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body{
+    background-image: url(stone-texture-background-textured-backdrop-copy-space-design-illustration-generative-ai-photo.jpeg),linear-gradient(rgba(88, 77, 77, 0.356),rgba(230, 74, 74, 0.285));
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-blend-mode: color;
+}
+
+label{
+    color: white;
+    font-size: 25px;
+    font-weight: 600;
+    font-family: Arial, Helvetica, ;
+    
+
+}
+
+.container{
+
+padding: 200px;
+width: 100%;
+
+margin: auto;
+display: flex;
+justify-content: center;
+text-align: center;
+
+}
+.ads{
+    margin-top: 150px;
+}
+
+form{
+
+    text-align: center;
+    width: 500px;
+    height: 400px;
+    box-shadow: rgb(10, 0, 0) 5px 19px 38px, rgba(10, 40, 30, 10.897) 0px 15px 12px;
+}
+
+input{
+
+    width: 200px;
+    text-align: center;
+    height: 43px;
+    border: none;
+    border-radius: 7px;
+}
+
+h3{
+    color: white;
+}
+
+
+         .btn-grad {background-image: linear-gradient(to right, #1F1C2C 0%, #928DAB  51%, #1F1C2C  100%)}
+         .btn-grad {
+            margin: 10px;
+            padding: 15px 45px;
+            text-align: center;
+            text-transform: uppercase;
+            transition: 0.5s;
+            background-size: 200% auto;
+            color: white;            
+            box-shadow: 0 0 20px #eee;
+            border-radius: 10px;
+            display: block;
+            margin: auto;
+            border: none;
+          }
+
+          .btn-grad:hover {
+            background-position: right center; /* change the direction of the change here */
+            color: #fff;
+            text-decoration: none;
+          }
+         

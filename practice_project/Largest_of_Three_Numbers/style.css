@@ -1,0 +1,83 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    background-image: url(pexels-ajay-babu-60227-217892.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+.container {
+
+    width: 100%;
+
+
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: 170px;
+}
+
+label{
+    font-size: 26px;
+    font-weight: 700;
+    background-color: white;
+   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+
+}
+input{
+ box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    width: 250px;
+    height: 40px;
+    text-align: center;
+border: none;
+border-radius: 7px;
+}
+
+.adss {
+
+    margin-top: 70px;
+}
+
+form {
+    width: 600px;
+    height: 400px;
+ 
+    text-align: center;
+ box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+
+
+         .btn-grad {background-image: linear-gradient(to right, #ECE9E6 0%, #FFFFFF  51%, #ECE9E6  100%)}
+         .btn-grad {
+            margin: 10px;
+            padding: 15px 45px;
+            text-align: center;
+            text-transform: uppercase;
+            transition: 0.5s;
+            background-size: 200% auto;
+            color: rgb(5, 5, 5);            
+            box-shadow: 0 0 20px #eee;
+            border-radius: 10px;
+            display: block;
+            margin: auto;
+            border: none;
+          }
+
+          .btn-grad:hover {
+            background-position: right center; /* change the direction of the change here */
+            color: #a49d9d;
+            text-decoration: none;
+          }
+         h3{
+
+            color: black;
+            background-color: white;
+         }
