@@ -1,0 +1,51 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+
+
+.btn{
+
+    padding: 6px;
+    color: black;
+    background-color: azure;
+    border-radius: 8px;
+
+    
+}
+
+
+.btn:hover{
+
+    background-color: green;
+    color: white;
+    transition: all 0.6s;
+}
+
+#search{
+
+    width: 200px;
+    height: 30px;
+    text-align: center;
+    font-size: 15px;
+    color: white;
+
+}
+
+
+#container{
+
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+#container img{
+
+    width: 250px;
+    height: 400px;
+
+}
