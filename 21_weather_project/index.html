@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather API</title>
+    <link rel="stylesheet" href="style.css">
+
+
+</head>
+
+<body>
+
+    <form id="form">
+
+        <center>
+
+            <div class="container red"><br><br><br>
+            <h3>weather check</h3>
+            <br>
+            <input type="text" name="city" id="input" required placeholder="Enter city name">
+<br><br>
+            <button class="btn" type="submit">check</button>
+
+
+            <div id="container">
+                <img src="" alt="" id="img">
+                <div class="temp">
+                    <h1 id="temperature"></h1>
+                    <h2 id="city"></h2>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="row">
+                    <div class="col">
+                        <img src="" alt="" id="humidity-img">
+                    </div>
+                    <div class="col">
+                        <p id="humidity-name"></p>
+                        <p id="humidity"></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <img src="" alt="" id="speed-img">
+
+                    </div>
+                    <div class="col">
+                        <p id="speed-name"></p>
+                        <p id="speed"></p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="not-found"></div>
+
+            </div>
+        </center>
+
+    </form>
+
+
+    <script src="index.js"></script>
+</body>
+
+</html>

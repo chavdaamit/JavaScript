@@ -1,0 +1,56 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body{
+
+    background-image: url(image/OIP.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    height: 100vh;
+}
+
+#img {
+  width: 100px;
+  margin-top: 20px;
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.red{
+
+
+    width: 300px;
+    height: 450px;
+    margin-top:200px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+
+
+#input{
+
+    width: 200px;
+    height: 30px;
+    text-align: center;
+    font-family: sans-serif;
+    font-weight: 700;
+}
+
+
+.btn{
+    padding: 10px;
+    height: 40px;
+    width: 60px;
+    background-color: white;
+    border-radius: 4px;
+}

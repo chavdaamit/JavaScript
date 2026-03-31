@@ -1,0 +1,26 @@
+*{
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+/* 
+
+.product-card{
+
+    min-height: 450px;
+}
+
+.product-card img{
+
+    height: 300px;
+} */
+
+
+
+.product-card:hover{
+
+    transform: scale(1.1);
+transition: all 0.5s;
+}
