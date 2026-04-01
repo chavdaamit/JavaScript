@@ -10,7 +10,7 @@
       integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div class="container">
@@ -34,7 +34,9 @@
                 <a class="nav-link active" aria-current="page" href="#">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Cart</a>
+                <button class="btn btn-primary" onclick="showModal()">
+                  Cart
+                </button>
               </li>
             </ul>
             <form class="d-flex" role="search">
@@ -54,8 +56,63 @@
     </div>
 
     <main>
-      <div class="container ">
+      <div class="container">
         <div class="row" id="product-list"></div>
+      </div>
+
+      <div
+        class="modal fade"
+        id="cartitem-list"
+        data-bs-backdrop="static"
+        data-bs-keyboard="false"
+        tabindex="-1"
+        aria-labelledby="staticBackdropLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="staticBackdropLabel">
+                Cart Items
+              </h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              
+              <table class="table">
+
+                <thead  >
+                  <tr>
+                    <th>product Name</th>
+                    <th>quantity</th>
+                    <th>price</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody id="cartTable" ></tbody>
+              </table>
+              
+              
+              
+              
+              </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+              <button type="button" class="btn btn-primary">Understood</button>
+            </div>
+          </div>
+        </div>
       </div>
     </main>
 

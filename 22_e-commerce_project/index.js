@@ -102,19 +102,82 @@ products.forEach((p) => {
   <div class="card-body text-center">
     <h5 class="card-title">${p.name}</h5>
     <h4 class="card-text">${p.price}</h4>
-    <button class="btn btn-primary" >Add to cart</button>
+    <button class="btn btn-primary" onclick="addToCart(${p.id})" >Add to cart</button>
   </div>
 </div>    
 </div>
     `;
 });
 
-const data = { name: "amit", age: 22 };
+// const data = { name: "amit", age: 22 };
+
+// localStorage.setItem("cartdata",JSON.stringify(data))
+
+// const productdata= localStorage.getItem("cartdata")
+
+// console.log("productdata",JSON.parse(productdata));
+
+const cartitems = JSON.parse(localStorage.getItem("cartData")) || [];
+
+console.log("cartitems", cartitems);
+
+function addToCart(id) {
+  try {
+    let product = cartitems.find((prod) => prod.id === id);
+
+    if (product) {
+      product.qty++;
+    } else {
+      product = products.find((prod) => prod.id === id);
+      cartitems.push({ ...product, qty: 1 });
+    }
+
+    localStorage.setItem("cartData", JSON.stringify(cartitems));
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+function showModal() {
+  const cartitems = document.getElementById("cartitem-list");
+
+  let modal = new bootstrap.Modal(cartitems);
+
+  modal.show();
+
+  showcartData()
+}
+
+function showcartData() {
+  try {
+    const cartlist = document.getElementById("cartTable");
+
+    cartitems.forEach((p) => {
+      cartlist.innerHTML += `
+      
+      <tr>
+      <td>${p.name}</td>      
+    
+
+      <td>
+
+      <div class="d-flex gap-2" >
+      
+      <button class="btn btn-success">+</button>
+
+      <h5>${p.qty}</h5>
+
+       <button class="btn btn-danger">-</button>
+
+      </div>
+</td>
+
+<td>${p.qty*p.price}</td>
 
 
-localStorage.setItem("cartdata",JSON.stringify(data))
+  </tr>
 
-
-const productdata= localStorage.getItem("cartdata")
-
-console.log("productdata",JSON.parse(productdata));
+      `;
+    });
+  } catch (error) {}
+}
