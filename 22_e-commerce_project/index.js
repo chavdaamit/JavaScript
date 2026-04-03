@@ -117,7 +117,7 @@ products.forEach((p) => {
 
 // console.log("productdata",JSON.parse(productdata));
 
-const cartitems = JSON.parse(localStorage.getItem("cartData")) || [];
+let cartitems = JSON.parse(localStorage.getItem("cartData")) || [];
 
 console.log("cartitems", cartitems);
 
@@ -139,23 +139,30 @@ function addToCart(id) {
 }
 
 function showModal() {
-  const cartitems = document.getElementById("cartitem-list");
+  const cartModal = document.getElementById("cartitem-list");
 
-  let modal = new bootstrap.Modal(cartitems);
+  let modal = new bootstrap.Modal(cartModal);
 
   modal.show();
-
-  showcartData()
+updateLatestData();
+  showcartData();
 }
 
 function showcartData() {
   try {
     const cartlist = document.getElementById("cartTable");
 
+    cartlist.innerHTML = "";
+
     cartitems.forEach((p) => {
       cartlist.innerHTML += `
       
       <tr>
+
+      <td>
+      <img src="${p.image}" style="width:50px " >
+      </td>
+
       <td>${p.name}</td>      
     
 
@@ -163,21 +170,97 @@ function showcartData() {
 
       <div class="d-flex gap-2" >
       
-      <button class="btn btn-success">+</button>
+      <button class="btn btn-success" onclick="increase(${p.id})"  >+</button>
 
       <h5>${p.qty}</h5>
 
-       <button class="btn btn-danger">-</button>
+       <button class="btn btn-danger" onclick="decrease(${p.id})" >-</button>
 
       </div>
 </td>
 
-<td>${p.qty*p.price}</td>
+<td>${p.qty * p.price}</td>
 
+<td>        <button class="btn btn-danger" onclick="remove(${p.id})" >Remove</button></td>
 
   </tr>
 
       `;
     });
   } catch (error) {}
+}
+
+function increase(id) {
+  const product = cartitems.find((p) => p.id === id);
+
+  if (product) {
+    product.qty++;
+  }
+
+  updateLatestData();
+}
+
+function updateLatestData() {
+  localStorage.setItem("cartData", JSON.stringify(cartitems));
+
+  showcartData();
+  total();
+}
+
+function decrease(id) {
+  const product = cartitems.find((p) => p.id === id);
+
+  if (product) {
+    product.qty--;
+  }
+
+  if (product.qty <= 0) {
+    cartitems = cartitems.filter((p) => p.id !== id);
+  }
+
+  updateLatestData();
+}
+
+function remove(id) {
+  cartitems = cartitems.filter((p) => p.id !== id);
+
+  updateLatestData();
+}
+
+function total() {
+  const total = document.getElementById("Grand-total");
+
+  
+total.innerHTML ="";
+
+  const totalAmount = cartitems.reduce((acc, curr) => {
+    return (acc += curr.price * curr.qty);
+  }, 0);
+
+total.innerHTML +=  `
+
+<h5>₹${totalAmount}</h5>
+`
+
+}
+
+function CheckOut(){
+
+  if(cartitems.length===0 ){
+
+    alert(
+
+      "there is currently no items in cart please add some item to checkout",
+    )
+
+
+  }else{
+
+    alert("order placed successfully")
+
+    cartitems=[];
+    updateLatestData();
+  }
+
+
 }
