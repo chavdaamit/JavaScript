@@ -14,7 +14,7 @@
   </head>
   <body>
     <div class="container">
-      <nav class="navbar navbar-expand-lg mt-2 bg-body-tertiary roundede-3">
+      <nav class="navbar navbar-expand-lg mt-2 bg-dark navbar-dark rounded-2">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">ShopCart</a>
           <button
@@ -36,6 +36,12 @@
               <li class="nav-item">
                 <button class="btn btn-primary" onclick="showModal()">
                   Cart
+                </button>
+              </li>
+
+              <li class="nav-item">
+                <button class="btn btn-primary ms-3" onclick="showModal1()">
+                  Add product
                 </button>
               </li>
             </ul>
@@ -69,7 +75,7 @@
         aria-labelledby="staticBackdropLabel"
         aria-hidden="true"
       >
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content">
             <div class="modal-header">
               <h1 class="modal-title fs-5" id="staticBackdropLabel">
@@ -83,10 +89,8 @@
               ></button>
             </div>
             <div class="modal-body">
-              
               <table class="table">
-
-                <thead  >
+                <thead>
                   <tr>
                     <th>product Name</th>
                     <th>quantity</th>
@@ -94,17 +98,13 @@
                     <th>Action</th>
                   </tr>
                 </thead>
-                <tbody id="cartTable" ></tbody>
+                <tbody id="cartTable"></tbody>
               </table>
-              
-              
-              
-              
-              </div>
+            </div>
             <div class="modal-footer">
-             <div class="me-auto">
-               <h5 class="fw-bold"  id="Grand-total"></h5>
-             </div>
+              <div class="me-auto">
+                <h5 class="fw-bold" id="Grand-total"></h5>
+              </div>
               <button
                 type="button"
                 class="btn btn-secondary"
@@ -112,12 +112,140 @@
               >
                 Close
               </button>
-              <button type="button" class="btn btn-primary" onclick="CheckOut()" >Check out</button>
+              <button
+                type="button"
+                class="btn btn-primary"
+                onclick="CheckOut()"
+              >
+                Check out
+              </button>
             </div>
           </div>
         </div>
       </div>
     </main>
+
+    <div
+      class="modal fade"
+      id="Add-list"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Add product</h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form action="" id="productform">
+              <input
+                type="text"
+                id="pname"
+                class="form-control mb-2"
+                placeholder="product name"
+                required
+              />
+              <input
+                type="number"
+                id="pprice"
+                class="form-control mb-2"
+                placeholder="product price"
+                required
+              />
+              <input
+                type="text"
+                id="pimg"
+                class="form-control mb-2"
+                placeholder="image URL"
+                required
+              />
+
+              <div class="modal-footer">
+                <button
+                  type="submit"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Close
+                </button>
+                <button type="submit" class="btn btn-primary">
+                  Save changes
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="modal fade"
+      id="updateProductModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">
+              update product Detail
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form action="" id="updateProductForm">
+              <input
+                type="text"
+                id="updateProductName"
+                class="form-control mb-2"
+                placeholder="product name"
+                required
+              />
+              <input
+                type="number"
+                id="updateProductPrice"
+                class="form-control mb-2"
+                placeholder="product price"
+                required
+              />
+              <input
+                type="text"
+                id="updateProductImage"
+                class="form-control mb-2"
+                placeholder="image URL"
+                required
+              />
+
+              <div class="modal-footer">
+                <button
+                  type="submit"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Close
+                </button>
+                <button type="submit" class="btn btn-primary">
+                  update product
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"

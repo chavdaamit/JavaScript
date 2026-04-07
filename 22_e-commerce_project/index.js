@@ -1,4 +1,4 @@
-const products = [
+let products = [
   {
     id: 1,
     name: "Wireless Earbuds",
@@ -91,23 +91,31 @@ const products = [
   },
 ];
 
-products.forEach((p) => {
+function showProduct() {
   const productlist = document.getElementById("product-list");
 
-  productlist.innerHTML += `
+  productlist.innerHTML = "";
+  products.forEach((p) => {
+    productlist.innerHTML += `
+  
     
     <div class="col-md-4 mt-4">
     <div class="card product-card shadow rounded-4">
   <img src="${p.image}" class="card-img-top img-fluid rounded-4 " alt="${p.name}">
-  <div class="card-body text-center">
+  <div class="card-body text-center ">
     <h5 class="card-title">${p.name}</h5>
     <h4 class="card-text">${p.price}</h4>
-    <button class="btn btn-primary" onclick="addToCart(${p.id})" >Add to cart</button>
+    <button class=" btn btn-outline-primary text-white" onclick="addToCart(${p.id})" >Add to cart</button>
+    <button class="btn btn-outline-warning" onclick="updateproductmodal(${p.id})" >✏️</button>
+    <button class="btn btn-outline-danger" onclick="deletproduct(${p.id})" >🗑️</button>
   </div>
 </div>    
 </div>
     `;
-});
+  });
+}
+
+showProduct();
 
 // const data = { name: "amit", age: 22 };
 
@@ -144,7 +152,7 @@ function showModal() {
   let modal = new bootstrap.Modal(cartModal);
 
   modal.show();
-updateLatestData();
+  updateLatestData();
   showcartData();
 }
 
@@ -230,37 +238,159 @@ function remove(id) {
 function total() {
   const total = document.getElementById("Grand-total");
 
-  
-total.innerHTML ="";
+  total.innerHTML = "";
 
   const totalAmount = cartitems.reduce((acc, curr) => {
     return (acc += curr.price * curr.qty);
   }, 0);
 
-total.innerHTML +=  `
+  total.innerHTML += `
 
 <h5>₹${totalAmount}</h5>
-`
-
+`;
 }
 
-function CheckOut(){
-
-  if(cartitems.length===0 ){
-
+function CheckOut() {
+  if (cartitems.length === 0) {
     alert(
-
       "there is currently no items in cart please add some item to checkout",
-    )
+    );
+  } else {
+    alert("order placed successfully");
 
-
-  }else{
-
-    alert("order placed successfully")
-
-    cartitems=[];
+    cartitems = [];
     updateLatestData();
   }
+}
 
+document.getElementById("productform").addEventListener("submit", (e) => {
+  e.preventDefault();
 
+  let name = document.getElementById("pname").value;
+  let price = Number(document.getElementById("pprice").value);
+  let img = document.getElementById("pimg").value;
+
+  let newProduct = {
+    id: products.length + 1,
+    name: name,
+    price: price,
+    image: img,
+  };
+
+  products.push(newProduct);
+
+  addProductToUI(newProduct);
+
+  e.target.reset();
+
+  const addProductModal = document.getElementById("Add-list");
+  const modal = bootstrap.Modal.getInstance(addProductModal);
+  modal.hide();
+});
+
+function showModal1() {
+  const cartModal = document.getElementById("Add-list");
+
+  let modal = new bootstrap.Modal(cartModal);
+
+  modal.show();
+  updateLatestData();
+  showcartData();
+}
+
+function addProductToUI(p) {
+  const productlist = document.getElementById("product-list");
+
+  productlist.innerHTML += `
+    <div class="col-md-4 mt-4">
+      <div class="card   product-card shadow rounded-4" > 
+        <img src="${p.image}" class="card-img-top" >
+        <div class="card-body text-center">
+          <h5>${p.name}</h5>
+          <p>₹${p.price}</p>
+          <button class="btn btn-primary" onclick="addToCart(${p.id})">
+            Add To Cart
+          </button>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+// function deletproduct(id) {
+//   let product = products.find((p) => p.id === id);
+
+//   if (!product) {
+//     alert("product is not found");
+//   }
+
+//   products = products.filter((p) => p.id !== id);
+
+//   showProduct();
+// }
+
+// function updateproductmodal(id) {
+//   const updateproductmodal = document.getElementById("updateProductModal");
+
+//   let modal = new bootstrap.Modal(updateproductmodal);
+
+//   modal.show();
+// }
+
+function deletproduct(id) {
+  let product = products.find((p) => p.id === id);
+
+  if (!product) {
+    alert("product is not found");
+  }
+
+  products = products.filter((p) => p.id !== id);
+
+  showProduct();
+}
+
+function updateproductmodal(id) {
+  const updateproductmodal = document.getElementById("updateProductModal");
+
+  let modal = new bootstrap.Modal(updateproductmodal);
+
+  modal.show();
+
+  const product = products.find((p) => p.id === id);
+
+  if (!product) {
+    return alert("product is not found");
+  }
+
+  let index = products.findIndex((p) => p.id === id);
+
+  if (index === -1) {
+    return alert("product is not found");
+  }
+
+  document.getElementById("updateProductName").value = products[index].name;
+  document.getElementById("updateProductPrice").value = products[index].price;
+  document.getElementById("updateProductImage").value = products[index].image;
+
+  document
+    .getElementById("updateProductForm")
+    .addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      let name = document.getElementById("updateProductName").value;
+
+      let price = document.getElementById("updateProductPrice").value;
+
+      let image = document.getElementById("updateProductImage").value;
+
+      products[index] = {
+        name,
+        price,
+        image,
+      };
+
+      modal.hide();
+
+      showProduct();
+    });
 }
