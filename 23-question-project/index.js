@@ -83,6 +83,9 @@ let nextBtn = document.getElementById("nextBtn");
 
 let currentIndex = 0;
 
+let score = 0;
+let selectedAnswer = "";
+
 function loadQns() {
   let currentqns = developerQuiz[currentIndex];
 
@@ -99,7 +102,11 @@ function loadQns() {
 
     button.innerText = opt;
 
-    button.classList.add("btn",  "option-btn");
+    button.classList.add("btn", "option-btn");
+
+    button.addEventListener("click", () => {
+      selectedAnswer = opt;
+    });
 
     options.appendChild(col);
 
@@ -109,17 +116,37 @@ function loadQns() {
 
 loadQns();
 
-let qunsCounter = 0;
+let qunsCounter = 1;
 
 function nextbutton() {
-  if (developerQuiz.length > currentIndex) {
-    currentIndex++;
-    qunsCounter++;
+  if (!selectedAnswer) {
+    alert("Please select answer");
+    return;
   }
 
-  qnsNumber.innerHTML = `Qns ${qunsCounter}/10`;
+  if (selectedAnswer === developerQuiz[currentIndex].answer) {
+    score++;
+  }
 
-  loadQns();
+  if (currentIndex < developerQuiz.length - 1) {
+    currentIndex++;
+    qunsCounter++;
+    selectedAnswer = "";
+    qnsNumber.innerHTML = `Qns ${qunsCounter}/${developerQuiz.length}`;
+    loadQns();
+  } else {
+    qunestionResult();
+  }
 }
 
-nextbutton();
+function qunestionResult() {
+  const qunestionResult = document.getElementById("Qns-Result");
+
+  qunestionResult.innerHTML = `
+  
+  <h3 class="text-center" >Quiz Result🎉</h3>
+
+  <h5 class="text-center">Result:- ${score}/${developerQuiz.length} </h5>
+
+  `;
+}
