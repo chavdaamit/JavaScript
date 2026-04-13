@@ -84,7 +84,9 @@ let nextBtn = document.getElementById("nextBtn");
 let currentIndex = 0;
 
 let score = 0;
-let selectedAnswer = "";
+let selectedAnswer = null;
+
+let userAnswer = [];
 
 function loadQns() {
   let currentqns = developerQuiz[currentIndex];
@@ -106,6 +108,7 @@ function loadQns() {
 
     button.addEventListener("click", () => {
       selectedAnswer = opt;
+      nextbutton();
     });
 
     options.appendChild(col);
@@ -123,6 +126,14 @@ function nextbutton() {
     alert("Please select answer");
     return;
   }
+
+  let current = developerQuiz[currentIndex];
+  userAnswer.push({
+    question: current.question,
+    options: current.options,
+    selected: current.options.indexOf(selectedAnswer),
+    correct: current.options.indexOf(current.answer),
+  });
 
   if (selectedAnswer === developerQuiz[currentIndex].answer) {
     score++;
@@ -142,11 +153,58 @@ function nextbutton() {
 function qunestionResult() {
   const qunestionResult = document.getElementById("Qns-Result");
 
+  nextBtn.style.display = "none";
+  options.innerHTML = "";
+  qns.innerHTML = "";
+
   qunestionResult.innerHTML = `
   
   <h3 class="text-center" >Quiz Result🎉</h3>
 
   <h5 class="text-center">Result:- ${score}/${developerQuiz.length} </h5>
+
+   <div  class="mt-3" >
+
+  <h3  class="text-center" >Review Summary</h3>
+
+ <ul class="list-group" >
+${userAnswer
+  .map(
+    (ans, index) => `
+    
+    <li class="list-group-item">
+
+    <h5 class="text-center">
+    Question No-${index + 1} :- ${ans.question}
+    </h5>
+
+    <h6 class="text-center">
+    Your Answer :- ${
+      ans.selected !== null
+        ? ans.options[ans.selected].replace(/</g, "&lt;").replace(/>/g, "&gt;")
+        : "not selected"
+    }
+    </h6>
+
+    <h6 class="text-center">
+    Correct Answer :- ${ans.options[ans.correct]
+
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")}
+
+
+
+    }
+    </h6>
+
+    </li>
+`,
+  )
+  .join("")}
+ </ul>
+
+  </div>
+
 
   `;
 }
