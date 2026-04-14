@@ -88,6 +88,9 @@ let selectedAnswer = null;
 
 let userAnswer = [];
 
+let TimerLeft = 30;
+let interval;
+
 function loadQns() {
   let currentqns = developerQuiz[currentIndex];
 
@@ -115,6 +118,7 @@ function loadQns() {
 
     col.appendChild(button);
   });
+  timer();
 }
 
 loadQns();
@@ -122,10 +126,7 @@ loadQns();
 let qunsCounter = 1;
 
 function nextbutton() {
-  if (!selectedAnswer) {
-    alert("Please select answer");
-    return;
-  }
+  
 
   let current = developerQuiz[currentIndex];
   userAnswer.push({
@@ -207,4 +208,23 @@ ${userAnswer
 
 
   `;
+}
+
+
+
+function timer() {
+  clearInterval(interval);
+  TimerLeft = 30;
+  qnsTimer.innerHTML =`Time Left : ${TimerLeft}`;
+
+  interval = setInterval(() => {
+    TimerLeft--;
+
+    qnsTimer.innerHTML =`Time Left : ${TimerLeft}`;
+
+    if (TimerLeft < 0) {
+    selectedAnswer = null;
+    nextbutton();
+  }
+  }, 1000);
 }
