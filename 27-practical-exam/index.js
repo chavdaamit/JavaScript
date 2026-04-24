@@ -39,12 +39,19 @@ function displayTasks() {
 
   tasks.forEach((task) => {
     list.innerHTML += `
-<div class="card p-3 mb-2">
-<h5>${task.title}</h5>
-<p>${task.desc}</p>
 
-<button class="btn btn-danger btn-sm" onclick="deleteTask(${task.id})">Delete</button>
-</div>
+
+<tr>
+
+<td><h5>${task.title}</h5></td>
+<td><p>${task.desc}</p></td>
+<td><button class="btn btn-warning btn-sm mb-4" onclick="editTask(${task.id})">Edit</button></td>
+<td><button class="btn btn-danger btn-sm" onclick="deleteTask(${task.id})">Delete</button></td>
+</tr>
+
+
+
+
 `;
   });
 }
@@ -55,6 +62,14 @@ function deleteTask(id) {
   displayTasks();
 }
 
+
+function editTask(id) {
+let task = tasks.find(t => t.id === id);
+
+document.getElementById("taskId").value = task.id;
+document.getElementById("title").value = task.title;
+document.getElementById("description").value = task.desc;
+}
 
 
 function clearForm() {
