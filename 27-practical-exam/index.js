@@ -3,6 +3,7 @@ let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 function addTask() {
   let id = document.getElementById("taskId").value;
   let title = document.getElementById("title").value;
+  let date = document.getElementById("date").value;
   let desc = document.getElementById("description").value;
 
   if (title === "") {
@@ -24,6 +25,7 @@ function addTask() {
       id: Date.now(),
       title,
       desc,
+      date
     };
     tasks.push(task);
   }
@@ -42,9 +44,11 @@ function displayTasks() {
 
 
 <tr>
-
+<td><p>${task.id}</p></td>
 <td><h5>${task.title}</h5></td>
 <td><p>${task.desc}</p></td>
+<td><b>${task.date}</b></td>
+
 <td><button class="btn btn-warning btn-sm mb-4" onclick="editTask(${task.id})">Edit</button></td>
 <td><button class="btn btn-danger btn-sm" onclick="deleteTask(${task.id})">Delete</button></td>
 </tr>
@@ -63,11 +67,13 @@ function deleteTask(id) {
 }
 
 
+
 function editTask(id) {
 let task = tasks.find(t => t.id === id);
 
 document.getElementById("taskId").value = task.id;
 document.getElementById("title").value = task.title;
+document.getElementById("date").value=task.date;
 document.getElementById("description").value = task.desc;
 }
 
@@ -76,6 +82,7 @@ function clearForm() {
   document.getElementById("taskId").value = "";
   document.getElementById("title").value = "";
   document.getElementById("description").value = "";
+  document.getElementById("date").value="";
 }
 
 window.onload = displayTasks;

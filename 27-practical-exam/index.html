@@ -8,18 +8,27 @@
       rel="stylesheet"
     />
   </head>
-  <body class="bg-light">
-    <div class="container mt-5">
-      <h2 class="text-center mb-4">Task Manager</h2>
-
+  <link rel="stylesheet" href="style.css" />
+  <body>
+    <div class="container d-flex justify-content-center align-items-center">
       <!-- Form -->
-      <div class="card p-3 mb-4">
+      <div class="card p-3 mb-4 ad-1" style="width: 550px">
+        <h2 class="text-center mt-4 fst-italic">Task Manager</h2>
         <input type="hidden" id="taskId" />
 
         <div class="mb-2">
           <input
             type="text"
             id="title"
+            class="form-control"
+            placeholder="Task Title"
+          />
+        </div>
+
+        <div class="mb-2">
+          <input
+            type="date"
+            id="date"
             class="form-control"
             placeholder="Task Title"
           />
@@ -34,28 +43,22 @@
         </div>
 
         <button class="btn btn-primary" onclick="addTask()">Save Task</button>
+
+        <table class="table table-bordered text-center mt-4">
+          <thead>
+            <tr>
+             
+              <th>Title</th>
+              <th>description</th>
+              <th>Date</th>
+              <th>Edit</th>
+              <th>Remove</th>
+            </tr>
+          </thead>
+
+          <tbody id="taskList"></tbody>
+        </table>
       </div>
-
-      <table class="table">
-        <thead>
-          <tr>
-           
-            <th>Title</th>
-            <th>description</th>
-            <th>Edit</th>
-            <th>Remove</th>
-          </tr>
-        </thead>
-
-        <tbody id="taskList" >
-  
-            
-
-        </tbody>
-
-      </table>
-
-    
     </div>
 
     <script src="index.js"></script>
