@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Array Project</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container mt-5">
+        <div class="red  p-4 text-center">
+
+            <h3 class="mb-3 fst-italic">Enter Number</h3>
+
+            <input type="number" class="mb-3 form-control fst-italic w-50 mx-auto" placeholder="Enter value" id="arrayNum">
+            <button class="btn btn-primary mb-3 fst-italic" onclick="startNum()">Start</button>
+
+            <div class="d-flex flex-wrap justify-content-center" id="itemArray"></div>
+
+            <button class="btn btn-outline-primary fst-italic m-2" id="showArray">Create Array</button>
+
+            <p id="createArray"></p>
+
+            <hr>
+
+            <input type="text" id="moreInput" class="form-control w-50 mx-auto fst-italic mb-2" placeholder="Enter value">
+
+
+            <div class="d-flex flex-wrap justify-content-center gap-2">
+
+                <button class="btn btn-outline-primary" id="pushBtn" onclick="pushBtn()">Push</button>
+                <button class="btn btn-outline-primary" id="popBtn" onclick="popBtn()">Pop</button>
+                <button class="btn btn-outline-primary" id="shiftBtn" onclick="shiftBtn()">Shift</button>
+                <button class="btn btn-outline-primary" id="unshiftBtn" onclick="unshiftBtn()">Unshift</button>
+                <button class="btn btn-outline-primary" id="reverseBtn" onclick="reverseBtn()">Reverse</button>
+                <button class="btn btn-outline-primary" id="toStringBtn" onclick="toStringBtn()">To String</button>
+                <button class="btn btn-outline-primary" id="lengthBtn" onclick="lengthBtn()">Length</button>
+                <button class="btn btn-outline-primary" id="indexOfBtn" onclick="indexOfBtn()">IndexOf</button>
+                <button class="btn btn-outline-primary" id="includesBtn" onclick="includesBtn()">Includes</button>                
+                <button class="btn btn-outline-primary" id="sortBtn" onclick="sortBtn()">Sort</button>
+                <button class="btn btn-outline-primary" id="ascendingBtn" onclick="ascendingBtn()">Ascending</button>
+                <button class="btn btn-outline-primary" id="descendingBtn" onclick="descendingBtn()">Descending</button>
+                <button class="btn btn-outline-primary" id="findBtn" onclick="findBtn()">Find</button>
+                <button class="btn btn-outline-primary" id="FindIndexBtn">Find Index</button>
+                <button class="btn btn-outline-primary" id="someBtn" onclick="someBtn()">Some</button>
+                <button class="btn btn-outline-primary" id="everyBtn" onclick="everyBtn()">Every</button>
+                <button class="btn btn-outline-primary" id="filterBtn" onclick="filterBtn()">Filter</button>
+                <button class="btn btn-outline-primary" id="mapBtn"  onclick="mapBtn()">Map</button>
+                <button class="btn btn-outline-primary" id="reduseBtn" onclick="reduceBtn()">Reduce</button>
+                <button class="btn btn-outline-primary" id="sliceBtn" onclick="sliceBtn()">Slice</button>
+                <button class="btn btn-outline-primary" id="joinBtn" onclick="joinBtn()">Join</button>
+               
+
+            </div>
+
+            <div class="mt-4">
+                <h5 class="fst-italic">Output:</h5>
+                <p id="output"></p>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+
+</body>
+
+</html>
